@@ -23,8 +23,8 @@ function createData(data) {
 function SimpleTable({ classes }) {
   const cols = [
     createData({ label: 'Dessert (100g serving)' }),
-    createData({ label: 'Calories', numeric: true }),
-    createData({ label: 'Protein (g)', numeric: true })
+    createData({ label: 'Calories', align: 'right'}),
+    createData({ label: 'Protein (g)', align: 'right'})
   ]
   const rows = [
     createData({ name: 'Cupcake', calories: 305, fat: 3.7 }),
@@ -61,8 +61,8 @@ function SimpleTable({ classes }) {
                 <TableCell component="th" scope="row">
                   {row.name}
                 </TableCell>
-                <TableCell numeric>{row.calories}</TableCell>
-                <TableCell numeric>{row.fat}</TableCell>
+                <TableCell align="right">{row.calories}</TableCell>
+                <TableCell align="right">{row.fat}</TableCell>
               </TableRow>
             ))}
           </TableBody>

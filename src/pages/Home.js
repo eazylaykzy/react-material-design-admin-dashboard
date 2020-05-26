@@ -2,11 +2,12 @@ import React, { Suspense, useState, useContext } from 'react'
 import { Router } from '@reach/router'
 import { withStyles } from '@material-ui/core/styles'
 import { Menu, MenuItem, IconButton, Badge } from '@material-ui/core'
+import ToggleOffIcon from '@material-ui/icons/ToggleOff'
+import ToggleOnIcon from '@material-ui/icons/ToggleOn'
 import {
   MailRounded,
   NotificationsRounded,
   AccountCircleRounded,
-  InvertColorsRounded,
   ExitToAppRounded
 } from '@material-ui/icons'
 
@@ -42,6 +43,8 @@ function MobileMenu({
   handleLogout,
   changeTheme
 }) {
+  const theme = localStorage.getItem('theme');
+
   return (
     <Menu
       anchorEl={mobileMoreAnchorEl}
@@ -78,7 +81,8 @@ function MobileMenu({
       </MenuItem>
       <MenuItem onClick={changeTheme}>
         <IconButton color="inherit">
-          <InvertColorsRounded />
+          {theme === 'light' ? <ToggleOffIcon fontSize="large"/>
+            : <ToggleOnIcon fontSize="large"/>}
         </IconButton>
         <p>Theme</p>
       </MenuItem>
@@ -161,7 +165,7 @@ function Home({ classes, theme }) {
       <main className={classes.content}>
         <Suspense fallback={<div>Loading...</div>}>
           <Router>
-            <Dashboard path="/*" title="Dashboard" />
+            <Dashboard path="/*" title="Hello Daron" />
             <AsyncForms path="forms/*" title="Forms" />
             <AsyncHeadings path="headings/*" title="Headings" />
             <AsyncTables path="tables/*" title="Tables" />

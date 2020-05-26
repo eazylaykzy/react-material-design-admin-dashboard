@@ -72,8 +72,8 @@ function ComplexTable({ classes }) {
             <TableHead>
               <TableRow>
                 <CustomTableCell>Dessert (100g serving)</CustomTableCell>
-                <CustomTableCell numeric>Calories</CustomTableCell>
-                <CustomTableCell numeric>Protein (g)</CustomTableCell>
+                <CustomTableCell align='right'>Calories</CustomTableCell>
+                <CustomTableCell align='right'>Protein (g)</CustomTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -84,8 +84,8 @@ function ComplexTable({ classes }) {
                     <TableCell component="th" scope="row">
                       {row.name}
                     </TableCell>
-                    <TableCell numeric>{row.calories}</TableCell>
-                    <TableCell numeric>{row.fat}</TableCell>
+                    <TableCell align='right'>{row.calories}</TableCell>
+                    <TableCell align='right'>{row.fat}</TableCell>
                   </TableRow>
                 ))}
               {emptyRows > 0 && (

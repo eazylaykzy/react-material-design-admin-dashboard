@@ -1,13 +1,13 @@
 import * as Yup from 'yup'
 
 export const initialValues = {
-  firstName: 'Gustavo',
-  lastName: 'Ordaz',
+  firstName: 'Daron',
+  lastName: 'Barker',
   phoneNumber: '',
-  email: 'ordazgustavo@gmail.com',
+  email: 'daron@parentpoints.com',
   type: '',
   isCompany: false,
-  gender: 'female',
+  gender: 'male',
   songs: ['Stressed Out']
 }
 
